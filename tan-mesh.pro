@@ -16,14 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    inpoperator.cpp \
     main.cpp \
     mainwindow.cpp \
+    tanmeshtool.cpp \
     tannode.cpp \
+    tantriangle.cpp \
     tanvector.cpp
 
 HEADERS += \
+    inpoperator.h \
     mainwindow.h \
+    tanmeshtool.h \
     tannode.h \
+    tantriangle.h \
     tanvector.h
 
 FORMS += \
