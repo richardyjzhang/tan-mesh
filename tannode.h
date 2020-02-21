@@ -22,7 +22,8 @@ public:
     bool valid() const;
     long getId() const;
     TanVector getVector() const;
-
+    static std::map<long, TanNode> getAllNodes();
+    static void clearAllNodes();
 public:
     static TanNode getNodeById(long id);
     static TanNode getNodeByVector(const TanVector & vector, bool create = false);

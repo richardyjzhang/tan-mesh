@@ -13,8 +13,13 @@ bool TanMeshTool::mesh()
     bool success = InpOperator::ReadInpFile(input, oriTriangles);
 
     std::vector<TanTriangle> triangles;
-    for (auto it = oriTriangles.begin(); it != oriTriangles.end(); ++it)
-        meshOneTriangle(*it, triangles);
+    if (success)
+    {
+        for (auto it = oriTriangles.begin(); it != oriTriangles.end(); ++it)
+            meshOneTriangle(*it, triangles);
+    }
+
+    success = success && InpOperator::WriteInpFile(output, triangles);
 
     return success;
 }

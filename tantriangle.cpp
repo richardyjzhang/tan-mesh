@@ -18,6 +18,12 @@ bool TanTriangle::valid() const
     return nodeA.valid() && nodeB.valid() && nodeC.valid();
 }
 
+long TanTriangle::getIdA() const { return idA; }
+
+long TanTriangle::getIdB() const { return idB; }
+
+long TanTriangle::getIdC() const { return idC; }
+
 void TanTriangle::turn()
 {
     std::swap(idA, idC);

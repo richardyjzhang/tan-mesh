@@ -19,6 +19,17 @@ long TanNode::getId() const { return id; }
 
 TanVector TanNode::getVector() const { return vec; }
 
+std::map<long, TanNode> TanNode::getAllNodes()
+{
+    return mapId2Node;
+}
+
+void TanNode::clearAllNodes()
+{
+    mapId2Node.clear();
+    mapNode2Id.clear();
+}
+
 TanNode TanNode::getNodeById(long id)
 {
     auto it = mapId2Node.find(id);

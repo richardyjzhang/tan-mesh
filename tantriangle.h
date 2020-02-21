@@ -16,6 +16,9 @@ private:
 
 public:
     bool valid() const;
+    long getIdA() const;
+    long getIdB() const;
+    long getIdC() const;
 
     // 翻转顺序，将ABC翻转为CBA，以调整法向
     void turn();
