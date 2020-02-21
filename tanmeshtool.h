@@ -2,6 +2,8 @@
 #define TANMESHTOOL_H
 
 #include <QString>
+#include <vector>
+#include "tantriangle.h"
 
 class TanMeshTool
 {
@@ -16,6 +18,9 @@ private:
 
 public:
     bool mesh();
+
+private:
+    void meshOneTriangle(const TanTriangle & triangle, std::vector<TanTriangle> & triangles);
 };
 
 #endif // TANMESHTOOL_H

@@ -35,6 +35,26 @@ double TanVector::distanceTo(const TanVector & vec) const
                      (z - vec.z) * (z - vec.z));
 }
 
+TanVector TanVector::crossProduct(const TanVector & vec1, const TanVector & vec2)
+{
+    TanVector vecRe;
+
+    vecRe.x = vec1.y * vec2.z - vec1.z * vec2.y;
+    vecRe.y = vec1.z * vec2.x - vec1.x * vec2.z;
+    vecRe.z = vec1.x * vec2.y - vec1.y * vec2.x;
+
+    return vecRe;
+}
+
+bool TanVector::opposite(const TanVector & vec1, const TanVector & vec2)
+{
+    // 如果有零向量，则不应该认为是反向向量
+    if (vec1.length() < _TOLERANCE_ || vec2.length() < _TOLERANCE_) return false;
+
+    TanVector vec = vec1.normalize() + vec2.normalize();
+    return vec.length() < _TOLERANCE_;
+}
+
 TanVector TanVector::normalize() const
 {
     TanVector vec;

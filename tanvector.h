@@ -26,6 +26,8 @@ public:
     double length() const;
     TanVector normalize() const;
     double distanceTo(const TanVector & vec) const;
+    static TanVector crossProduct(const TanVector & vec1, const TanVector & vec2);
+    static bool opposite(const TanVector & vec1, const TanVector & vec2);
     friend bool operator < (const TanVector & vec1, const TanVector & vec2);
     friend TanVector operator + (const TanVector & vec1, const TanVector & vec2);
     friend TanVector operator - (const TanVector & vec1, const TanVector & vec2);
