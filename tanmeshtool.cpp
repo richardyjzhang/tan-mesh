@@ -54,8 +54,8 @@ void TanMeshTool::meshOneTriangle(const TanTriangle & triangle, std::vector<TanT
     {
         TanVector vecNewB = nodeS.getVector() + curMax / cnt * i * vecSE;
         TanVector vecNewC = vecNewB + curMax / cnt * vecSE;
-        TanNode nodeNewB = TanNode::getNodeByVector(vecNewB);
-        TanNode nodeNewC = TanNode::getNodeByVector(vecNewC);
+        TanNode nodeNewB = TanNode::getNodeByVector(vecNewB, true);
+        TanNode nodeNewC = TanNode::getNodeByVector(vecNewC, true);
         TanTriangle newTriangle(nodeNewB.getId(), nodeNewC.getId(), nodeA.getId());
 
         // 这里进行处理，保证新生成的小三角形和原始三角形法向一致
