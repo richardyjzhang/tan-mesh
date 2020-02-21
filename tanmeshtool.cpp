@@ -20,6 +20,7 @@ bool TanMeshTool::mesh()
     }
 
     success = success && InpOperator::WriteInpFile(output, triangles);
+    TanNode::clearAllNodes();
 
     return success;
 }
