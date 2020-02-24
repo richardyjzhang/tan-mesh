@@ -45,7 +45,7 @@ TanVector TanTriangle::getNormal() const
     return vec;
 }
 
-double TanTriangle::getMaxEdge(long & idS, long & idE, long & idAngle) const
+double TanTriangle::getMaxEdge(long * idS, long * idE, long * idAngle) const
 {
     if (!valid()) return 0.0;
 
@@ -63,23 +63,23 @@ double TanTriangle::getMaxEdge(long & idS, long & idE, long & idAngle) const
     double maxLen = 0.0;
     if (ab >= bc && ab >= ca)
     {
-        idS = idA;
-        idE = idB;
-        idAngle = idC;
+        if (idS) *idS = idA;
+        if (idE) *idE = idB;
+        if (idAngle) *idAngle = idC;
         maxLen = ab;
     }
     else if (bc >= ab && bc >= ca)
     {
-        idS = idB;
-        idE = idC;
-        idAngle = idA;
+        if (idS) *idS = idB;
+        if (idE) *idE = idC;
+        if (idAngle) *idAngle = idA;
         maxLen = bc;
     }
     else
     {
-        idS = idC;
-        idE = idA;
-        idAngle = idB;
+        if (idS) *idS = idC;
+        if (idE) *idE = idA;
+        if (idAngle) *idAngle = idB;
         maxLen = ca;
     }
     return maxLen;

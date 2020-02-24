@@ -3,6 +3,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include "tanmeshtoolbasic.h"
+#include "tanmeshtoolequally.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -57,7 +58,7 @@ void MainWindow::on_pushButton_2_clicked()
         return;
     }
 
-    TanMeshTool * tool = new TanMeshToolBasic(ui->tb_Input->text(), ui->tb_Output->text(), tolerance, maxLen);
+    TanMeshTool * tool = new TanMeshToolEqually(ui->tb_Input->text(), ui->tb_Output->text(), tolerance, maxLen);
     bool success = tool->mesh();
     delete tool;
     if (success) QMessageBox::information(this, "完成", "网格细化完成");

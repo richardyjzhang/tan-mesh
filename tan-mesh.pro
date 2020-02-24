@@ -21,6 +21,7 @@ SOURCES += \
     mainwindow.cpp \
     tanmeshtool.cpp \
     tanmeshtoolbasic.cpp \
+    tanmeshtoolequally.cpp \
     tannode.cpp \
     tantriangle.cpp \
     tanvector.cpp
@@ -30,6 +31,7 @@ HEADERS += \
     mainwindow.h \
     tanmeshtool.h \
     tanmeshtoolbasic.h \
+    tanmeshtoolequally.h \
     tannode.h \
     tantriangle.h \
     tanvector.h

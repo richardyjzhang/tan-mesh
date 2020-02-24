@@ -37,7 +37,7 @@ bool TanMeshToolBasic::mesh()
 void TanMeshToolBasic::meshOneTriangle(const TanTriangle & triangle, std::vector<TanTriangle> & triangles)
 {
     long idS, idE, idAngle;
-    double curMax = triangle.getMaxEdge(idS, idE, idAngle);
+    double curMax = triangle.getMaxEdge(&idS, &idE, &idAngle);
     if (curMax <= maxLen)
     {
         // 如果最长边都满足要求，说明可以放在结果列表中结束了

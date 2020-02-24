@@ -27,7 +27,7 @@ public:
     TanVector getNormal() const;
 
     // 获取三角形的最长边，返回长度，并给出Start End和Angle三个点
-    double getMaxEdge(long & idS, long & idE, long & idAngle) const;
+    double getMaxEdge(long * idS = nullptr, long * idE = nullptr, long * idAngle = nullptr) const;
 };
 
 #endif // TANTRIANGLE_H
