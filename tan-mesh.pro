@@ -20,6 +20,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     tanmeshtool.cpp \
+    tanmeshtoolbasic.cpp \
     tannode.cpp \
     tantriangle.cpp \
     tanvector.cpp
@@ -28,6 +29,7 @@ HEADERS += \
     inpoperator.h \
     mainwindow.h \
     tanmeshtool.h \
+    tanmeshtoolbasic.h \
     tannode.h \
     tantriangle.h \
     tanvector.h

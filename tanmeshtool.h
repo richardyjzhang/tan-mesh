@@ -2,25 +2,23 @@
 #define TANMESHTOOL_H
 
 #include <QString>
-#include <vector>
 #include "tantriangle.h"
 
+// 各种分割方式的虚基类
 class TanMeshTool
 {
 public:
     TanMeshTool(const QString & input, const QString & output, double tolerance, double maxLen);
+    virtual ~TanMeshTool();
 
-private:
+protected:
     QString input;
     QString output;
     double tolerance;
     double maxLen;
 
 public:
-    bool mesh();
-
-private:
-    void meshOneTriangle(const TanTriangle & triangle, std::vector<TanTriangle> & triangles);
+    virtual bool mesh() = 0;
 };
 
 #endif // TANMESHTOOL_H
