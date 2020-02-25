@@ -56,8 +56,8 @@ void TanMeshToolEqually::calcOneLineVectors(int cnt, int i, TanTriangle triangle
     TanVector C = TanNode::getNodeById(idC).getVector();
     TanVector AB = (B - A).normalize();
     TanVector BC = (C - B).normalize();
-    double ab = AB.length();
-    double bc = BC.length();
+    double ab = A.distanceTo(B);
+    double bc = B.distanceTo(C);
 
     std::vector<TanVector> vecs;
     for (int j = 0; j <= i; ++j)
@@ -91,7 +91,7 @@ void TanMeshToolEqually::meshOneTriangle(int cnt, const TanTriangle & triangle, 
             if (0 != j)
             {
                 TanVector upLeft = mapLine2Vectors[i - 1][j - 1];
-                TanVector down = mapLine2Vectors[j][j];
+                TanVector down = mapLine2Vectors[i][j];
                 TanVector upRight = mapLine2Vectors[i - 1][j];
                 long id1 = TanNode::getNodeByVector(upLeft, true).getId();
                 long id2 = TanNode::getNodeByVector(down, true).getId();
