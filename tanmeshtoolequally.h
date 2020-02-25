@@ -2,6 +2,7 @@
 #define TANMESHTOOLEQUALLY_H
 
 #include "tanmeshtool.h"
+#include <vector>
 
 class TanMeshToolEqually : public TanMeshTool
 {
